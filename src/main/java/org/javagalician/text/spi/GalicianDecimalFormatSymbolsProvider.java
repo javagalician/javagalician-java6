@@ -25,7 +25,7 @@ public class GalicianDecimalFormatSymbolsProvider extends DecimalFormatSymbolsPr
             throw new NullPointerException();
         }
         if (GALICIAN_LOCALE.equals(locale)){
-            return GalicianDecimalFormatSymbols.INSTANCE;
+            return new GalicianDecimalFormatSymbols();
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
                 "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");

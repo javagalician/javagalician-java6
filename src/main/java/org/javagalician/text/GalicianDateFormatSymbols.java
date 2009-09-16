@@ -6,25 +6,23 @@ import java.util.Locale;
 public class GalicianDateFormatSymbols extends DateFormatSymbols {
     
     private static final long serialVersionUID = 6772605910726027718L;
-
-    public static GalicianDateFormatSymbols INSTANCE = new GalicianDateFormatSymbols();
     
     
-    private final String[] GALICIAN_MONTHS = 
+    private static final String[] GALICIAN_MONTHS = 
         {"xaneiro", "febreiro", "marzo", "abril", "maio", "xu\u00F1o", "xullo", 
         "agosto", "setembro", "outubro", "novembro", "decembro", ""};
 
-    private final String[] GALICIAN_SHORT_MONTHS = 
+    private static final String[] GALICIAN_SHORT_MONTHS = 
         {"xan", "feb", "mar", "abr", "mai", "xu\u00F1", "xul", 
         "ago", "set", "out", "nov", "dec", ""};
 
-    private final String[] GALICIAN_SHORT_WEEKDAYS = 
+    private static final String[] GALICIAN_SHORT_WEEKDAYS = 
         {"", "dom", "lun", "mar", "m\u00E9r", "xov", "ven", "s\u00E1b"};
 
-    private final String[] GALICIAN_WEEKDAYS = 
+    private static final String[] GALICIAN_WEEKDAYS = 
         {"", "domingo", "luns", "martes", "m\u00E9rcores", "xoves", "venres", "s\u00E1bado"};
     
-    private final String[][] GALICIAN_ZONE_STRINGS =
+    private static final String[][] GALICIAN_ZONE_STRINGS =
         {
             {"America/Los_Angeles", "Hora est\u00E1ndar do Pac\u00EDfico", "PST", "Hora de ver\u00E1n do Pac\u00EDfico", "PDT"},
             {"PST", "Hora est\u00E1ndar do Pac\u00EDfico", "PST", "Hora de ver\u00E1n do Pac\u00EDfico", "PDT"},
@@ -596,11 +594,11 @@ public class GalicianDateFormatSymbols extends DateFormatSymbols {
     
     public GalicianDateFormatSymbols() {
         super(new Locale("es","ES"));
-        this.setMonths(this.GALICIAN_MONTHS);
-        this.setShortMonths(this.GALICIAN_SHORT_MONTHS);
-        this.setShortWeekdays(this.GALICIAN_SHORT_WEEKDAYS);
-        this.setWeekdays(this.GALICIAN_WEEKDAYS);
-        this.setZoneStrings(this.GALICIAN_ZONE_STRINGS);
+        this.setMonths(GALICIAN_MONTHS);
+        this.setShortMonths(GALICIAN_SHORT_MONTHS);
+        this.setShortWeekdays(GALICIAN_SHORT_WEEKDAYS);
+        this.setWeekdays(GALICIAN_WEEKDAYS);
+        this.setZoneStrings(GALICIAN_ZONE_STRINGS);
     }
 
 }

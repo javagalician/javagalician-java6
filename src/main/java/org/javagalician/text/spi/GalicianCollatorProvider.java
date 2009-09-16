@@ -1,38 +1,37 @@
 package org.javagalician.text.spi;
 
-import java.text.DateFormatSymbols;
-import java.text.spi.DateFormatSymbolsProvider;
+import java.text.Collator;
+import java.text.spi.CollatorProvider;
 import java.util.Arrays;
 import java.util.Locale;
 
-import org.javagalician.text.GalicianDateFormatSymbols;
-
-
-public class GalicianDateFormatSymbolsProvider extends DateFormatSymbolsProvider {
+public class GalicianCollatorProvider extends CollatorProvider {
 
     private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
     private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
+
+    private static final Locale CASTILIAN_LOCALE = new Locale("es","ES");
+
     
-    
-    
-    
-    public GalicianDateFormatSymbolsProvider() {
+    public GalicianCollatorProvider() {
         super();
     }
     
     
-
+    
     @Override
-    public DateFormatSymbols getInstance(final Locale locale) {
+    public Collator getInstance(Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         if (GALICIAN_LOCALE.equals(locale)){
-            return new GalicianDateFormatSymbols();
+            return Collator.getInstance(CASTILIAN_LOCALE); 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-        		"is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
     }
+    
+    
 
     @Override
     public Locale[] getAvailableLocales() {
