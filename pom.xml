@@ -4,7 +4,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.javagalician</groupId>
-  <artifactId>javagalician</artifactId>
+  <artifactId>javagalician-java6</artifactId>
   <packaging>jar</packaging>
   <version>1.0-dev</version>
   <name>javagalician</name>
