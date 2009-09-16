@@ -8,7 +8,7 @@ import java.util.Locale;
 import org.javagalician.text.GalicianDateFormatSymbols;
 
 
-public class GalicianDateFormatSymbolsProviderImpl extends DateFormatSymbolsProvider {
+public class GalicianDateFormatSymbolsProvider extends DateFormatSymbolsProvider {
 
     private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
     private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
@@ -16,7 +16,7 @@ public class GalicianDateFormatSymbolsProviderImpl extends DateFormatSymbolsProv
     
     
     
-    public GalicianDateFormatSymbolsProviderImpl() {
+    public GalicianDateFormatSymbolsProvider() {
         super();
     }
     

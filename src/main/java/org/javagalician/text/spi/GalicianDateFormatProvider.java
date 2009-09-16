@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Locale;
 
 
-public class GalicianDateFormatProviderImpl extends DateFormatProvider {
+public class GalicianDateFormatProvider extends DateFormatProvider {
 
     private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
     private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
@@ -24,7 +24,7 @@ public class GalicianDateFormatProviderImpl extends DateFormatProvider {
     
     
     
-    public GalicianDateFormatProviderImpl() {
+    public GalicianDateFormatProvider() {
         super();
     }
     
