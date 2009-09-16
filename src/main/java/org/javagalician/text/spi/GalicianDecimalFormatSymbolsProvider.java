@@ -7,7 +7,7 @@ import java.util.Locale;
 
 import org.javagalician.text.GalicianDecimalFormatSymbols;
 
-public class GalicianDecimalFormatSymbolsProvider extends DecimalFormatSymbolsProvider {
+public final class GalicianDecimalFormatSymbolsProvider extends DecimalFormatSymbolsProvider {
 
     private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
     private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };

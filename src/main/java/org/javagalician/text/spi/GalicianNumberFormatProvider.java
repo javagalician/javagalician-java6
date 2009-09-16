@@ -8,7 +8,7 @@ import java.util.Locale;
 
 import org.javagalician.text.GalicianDecimalFormatSymbols;
 
-public class GalicianNumberFormatProvider extends NumberFormatProvider {
+public final class GalicianNumberFormatProvider extends NumberFormatProvider {
 
     private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
     private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
@@ -22,7 +22,7 @@ public class GalicianNumberFormatProvider extends NumberFormatProvider {
     
     
     @Override
-    public NumberFormat getCurrencyInstance(Locale locale) {
+    public NumberFormat getCurrencyInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
@@ -38,7 +38,7 @@ public class GalicianNumberFormatProvider extends NumberFormatProvider {
     }
 
     @Override
-    public NumberFormat getIntegerInstance(Locale locale) {
+    public NumberFormat getIntegerInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
@@ -54,7 +54,7 @@ public class GalicianNumberFormatProvider extends NumberFormatProvider {
     }
 
     @Override
-    public NumberFormat getNumberInstance(Locale locale) {
+    public NumberFormat getNumberInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
@@ -70,7 +70,7 @@ public class GalicianNumberFormatProvider extends NumberFormatProvider {
     }
 
     @Override
-    public NumberFormat getPercentInstance(Locale locale) {
+    public NumberFormat getPercentInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }

@@ -1,37 +1,32 @@
-package org.javagalician.text.spi;
+package org.javagalician.util.spi;
 
-import java.text.DateFormatSymbols;
-import java.text.spi.DateFormatSymbolsProvider;
 import java.util.Arrays;
+import java.util.Currency;
 import java.util.Locale;
+import java.util.spi.CurrencyNameProvider;
 
-import org.javagalician.text.GalicianDateFormatSymbols;
-
-
-public final class GalicianDateFormatSymbolsProvider extends DateFormatSymbolsProvider {
+public final class GalicianCurrencyNameProvider extends CurrencyNameProvider {
 
     private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
     private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
+
+    private static final Locale CASTILIAN_LOCALE = new Locale("es","ES");
+
     
-    
-    
-    
-    public GalicianDateFormatSymbolsProvider() {
+    public GalicianCurrencyNameProvider() {
         super();
     }
     
-    
-
     @Override
-    public DateFormatSymbols getInstance(final Locale locale) {
+    public String getSymbol(final String currencyCode, final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         if (GALICIAN_LOCALE.equals(locale)){
-            return new GalicianDateFormatSymbols();
+            return Currency.getInstance(currencyCode).getSymbol(CASTILIAN_LOCALE); 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-        		"is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
     }
 
     @Override

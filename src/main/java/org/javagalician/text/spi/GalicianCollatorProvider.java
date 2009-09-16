@@ -5,7 +5,7 @@ import java.text.spi.CollatorProvider;
 import java.util.Arrays;
 import java.util.Locale;
 
-public class GalicianCollatorProvider extends CollatorProvider {
+public final class GalicianCollatorProvider extends CollatorProvider {
 
     private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
     private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
@@ -20,7 +20,7 @@ public class GalicianCollatorProvider extends CollatorProvider {
     
     
     @Override
-    public Collator getInstance(Locale locale) {
+    public Collator getInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }

@@ -5,7 +5,7 @@ import java.text.spi.BreakIteratorProvider;
 import java.util.Arrays;
 import java.util.Locale;
 
-public class GalicianBreakIteratorProvider extends BreakIteratorProvider {
+public final class GalicianBreakIteratorProvider extends BreakIteratorProvider {
 
     private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
     private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
@@ -20,7 +20,7 @@ public class GalicianBreakIteratorProvider extends BreakIteratorProvider {
     
     
     @Override
-    public BreakIterator getCharacterInstance(Locale locale) {
+    public BreakIterator getCharacterInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
@@ -32,7 +32,7 @@ public class GalicianBreakIteratorProvider extends BreakIteratorProvider {
     }
 
     @Override
-    public BreakIterator getLineInstance(Locale locale) {
+    public BreakIterator getLineInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
@@ -44,7 +44,7 @@ public class GalicianBreakIteratorProvider extends BreakIteratorProvider {
     }
 
     @Override
-    public BreakIterator getSentenceInstance(Locale locale) {
+    public BreakIterator getSentenceInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
@@ -56,7 +56,7 @@ public class GalicianBreakIteratorProvider extends BreakIteratorProvider {
     }
 
     @Override
-    public BreakIterator getWordInstance(Locale locale) {
+    public BreakIterator getWordInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }

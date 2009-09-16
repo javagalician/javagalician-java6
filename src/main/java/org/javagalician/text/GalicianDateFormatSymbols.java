@@ -3,7 +3,7 @@ package org.javagalician.text;
 import java.text.DateFormatSymbols;
 import java.util.Locale;
 
-public class GalicianDateFormatSymbols extends DateFormatSymbols {
+public final class GalicianDateFormatSymbols extends DateFormatSymbols {
     
     private static final long serialVersionUID = 6772605910726027718L;
     
