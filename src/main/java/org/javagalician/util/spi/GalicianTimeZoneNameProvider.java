@@ -53,11 +53,11 @@ public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
             final String[][] zoneStrings = symbols.getZoneStrings();
             for (int i = 0; i < zoneStrings.length; i++) {
                 if (ID.equalsIgnoreCase(zoneStrings[i][0])) {
-                    if (style == TimeZone.LONG) {
-                        return (daylight? zoneStrings[i][3] : zoneStrings[i][1]);
-                    }
-                    if (style == TimeZone.SHORT) {
-                        return (daylight? zoneStrings[i][4] : zoneStrings[i][4]);
+                    switch (style) {
+                        case TimeZone.LONG :
+                            return (daylight? zoneStrings[i][3] : zoneStrings[i][1]);
+                        case TimeZone.SHORT :
+                            return (daylight? zoneStrings[i][4] : zoneStrings[i][2]);
                     }
                 }
             }
@@ -70,10 +70,7 @@ public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
     
     
     private static boolean isStyleValid(final int style) {
-        if (style == TimeZone.SHORT || style == TimeZone.LONG) {
-            return true;
-        }
-        return false;
+        return (style == TimeZone.SHORT || style == TimeZone.LONG);
     }
 
     

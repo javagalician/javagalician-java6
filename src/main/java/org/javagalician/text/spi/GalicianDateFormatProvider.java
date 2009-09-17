@@ -58,17 +58,15 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
             throw new IllegalArgumentException("Style \"" + style + "\" is not valid");
         }
         if (GALICIAN_LOCALE.equals(locale)){
-            if (style == DateFormat.FULL) {
-                return new SimpleDateFormat(PATTERN_DATE_FULL, locale); 
-            }
-            if (style == DateFormat.LONG) {
-                return new SimpleDateFormat(PATTERN_DATE_LONG, locale); 
-            }
-            if (style == DateFormat.MEDIUM) {
-                return new SimpleDateFormat(PATTERN_DATE_MEDIUM, locale); 
-            }
-            if (style == DateFormat.SHORT) {
-                return new SimpleDateFormat(PATTERN_DATE_SHORT, locale); 
+            switch (style) {
+                case DateFormat.FULL:
+                    return new SimpleDateFormat(PATTERN_DATE_FULL, locale); 
+                case DateFormat.LONG:
+                    return new SimpleDateFormat(PATTERN_DATE_LONG, locale); 
+                case DateFormat.MEDIUM:
+                    return new SimpleDateFormat(PATTERN_DATE_MEDIUM, locale); 
+                case DateFormat.SHORT:
+                    return new SimpleDateFormat(PATTERN_DATE_SHORT, locale); 
             }
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
@@ -91,24 +89,34 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
         if (GALICIAN_LOCALE.equals(locale)){
             
             final StringBuffer pattern = new StringBuffer();
-            if (dateStyle == DateFormat.FULL) {
-                pattern.append(PATTERN_DATE_FULL); 
-            } else if (dateStyle == DateFormat.LONG) {
-                pattern.append(PATTERN_DATE_LONG); 
-            } else if (dateStyle == DateFormat.MEDIUM) {
-                pattern.append(PATTERN_DATE_MEDIUM); 
-            } else  if (dateStyle == DateFormat.SHORT) {
-                pattern.append(PATTERN_DATE_SHORT); 
+            switch (dateStyle) {
+                case DateFormat.FULL:
+                    pattern.append(PATTERN_DATE_FULL);
+                    break;
+                case DateFormat.LONG:
+                    pattern.append(PATTERN_DATE_LONG); 
+                    break;
+                case DateFormat.MEDIUM:
+                    pattern.append(PATTERN_DATE_MEDIUM); 
+                    break;
+                case DateFormat.SHORT:
+                    pattern.append(PATTERN_DATE_SHORT); 
+                    break;
             }
             pattern.append(" ");
-            if (timeStyle == DateFormat.FULL) {
-                pattern.append(PATTERN_TIME_FULL); 
-            } else if (timeStyle == DateFormat.LONG) {
-                pattern.append(PATTERN_TIME_LONG); 
-            } else if (timeStyle == DateFormat.MEDIUM) {
-                pattern.append(PATTERN_TIME_MEDIUM); 
-            } else  if (timeStyle == DateFormat.SHORT) {
-                pattern.append(PATTERN_TIME_SHORT); 
+            switch (timeStyle) {
+                case DateFormat.FULL:
+                    pattern.append(PATTERN_TIME_FULL);
+                    break;
+                case DateFormat.LONG:
+                    pattern.append(PATTERN_TIME_LONG); 
+                    break;
+                case DateFormat.MEDIUM:
+                    pattern.append(PATTERN_TIME_MEDIUM); 
+                    break;
+                case DateFormat.SHORT:
+                    pattern.append(PATTERN_TIME_SHORT); 
+                    break;
             }
             
             return new SimpleDateFormat(pattern.toString(), locale);
@@ -129,17 +137,15 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
             throw new IllegalArgumentException("Style \"" + style + "\" is not valid");
         }
         if (GALICIAN_LOCALE.equals(locale)){
-            if (style == DateFormat.FULL) {
-                return new SimpleDateFormat(PATTERN_TIME_FULL, locale); 
-            }
-            if (style == DateFormat.LONG) {
-                return new SimpleDateFormat(PATTERN_TIME_LONG, locale); 
-            }
-            if (style == DateFormat.MEDIUM) {
-                return new SimpleDateFormat(PATTERN_TIME_MEDIUM, locale); 
-            }
-            if (style == DateFormat.SHORT) {
-                return new SimpleDateFormat(PATTERN_TIME_SHORT, locale); 
+            switch (style) {
+                case DateFormat.FULL:
+                    return new SimpleDateFormat(PATTERN_TIME_FULL, locale); 
+                case DateFormat.LONG:
+                    return new SimpleDateFormat(PATTERN_TIME_LONG, locale); 
+                case DateFormat.MEDIUM:
+                    return new SimpleDateFormat(PATTERN_TIME_MEDIUM, locale); 
+                case DateFormat.SHORT:
+                    return new SimpleDateFormat(PATTERN_TIME_SHORT, locale); 
             }
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
@@ -149,11 +155,8 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
     
     
     private static boolean isStyleValid(final int style) {
-        if (style == DateFormat.SHORT || style == DateFormat.MEDIUM || 
-                style == DateFormat.LONG || style == DateFormat.FULL) {
-            return true;
-        }
-        return false;
+        return (style == DateFormat.SHORT || style == DateFormat.MEDIUM || 
+                style == DateFormat.LONG || style == DateFormat.FULL);
     }
     
     
