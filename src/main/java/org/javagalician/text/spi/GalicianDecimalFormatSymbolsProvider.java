@@ -24,12 +24,10 @@ import java.text.spi.DecimalFormatSymbolsProvider;
 import java.util.Arrays;
 import java.util.Locale;
 
+import org.javagalician.constants.Locales;
 import org.javagalician.text.GalicianDecimalFormatSymbols;
 
 public final class GalicianDecimalFormatSymbolsProvider extends DecimalFormatSymbolsProvider {
-
-    private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
-    private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
 
     
     public GalicianDecimalFormatSymbolsProvider() {
@@ -43,18 +41,18 @@ public final class GalicianDecimalFormatSymbolsProvider extends DecimalFormatSym
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (GALICIAN_LOCALE.equals(locale)){
+        if (Locales.GALICIAN.equals(locale)){
             return new GalicianDecimalFormatSymbols();
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
     
     
 
     @Override
     public Locale[] getAvailableLocales() {
-        return GALICIAN_LOCALE_ARRAY;
+        return Locales.GALICIAN_ARRAY;
     }
 
 }

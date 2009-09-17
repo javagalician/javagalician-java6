@@ -25,10 +25,9 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.spi.TimeZoneNameProvider;
 
-public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
+import org.javagalician.constants.Locales;
 
-    private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
-    private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
+public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
 
     
     public GalicianTimeZoneNameProvider() {
@@ -47,9 +46,9 @@ public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
         if (!isStyleValid(style)) {
             throw new IllegalArgumentException("Style \"" + style + "\" is not valid");
         }
-        if (GALICIAN_LOCALE.equals(locale)){
+        if (Locales.GALICIAN.equals(locale)){
             
-            final DateFormatSymbols symbols = DateFormatSymbols.getInstance(GALICIAN_LOCALE);
+            final DateFormatSymbols symbols = DateFormatSymbols.getInstance(Locales.GALICIAN);
             final String[][] zoneStrings = symbols.getZoneStrings();
             for (int i = 0; i < zoneStrings.length; i++) {
                 if (ID.equalsIgnoreCase(zoneStrings[i][0])) {
@@ -64,7 +63,7 @@ public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
             
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
     
     
@@ -76,7 +75,7 @@ public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
     
     @Override
     public Locale[] getAvailableLocales() {
-        return GALICIAN_LOCALE_ARRAY;
+        return Locales.GALICIAN_ARRAY;
     }
 
 }

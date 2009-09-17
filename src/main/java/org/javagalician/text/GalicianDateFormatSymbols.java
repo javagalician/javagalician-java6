@@ -20,7 +20,8 @@
 package org.javagalician.text;
 
 import java.text.DateFormatSymbols;
-import java.util.Locale;
+
+import org.javagalician.constants.Locales;
 
 public final class GalicianDateFormatSymbols extends DateFormatSymbols {
     
@@ -612,7 +613,7 @@ public final class GalicianDateFormatSymbols extends DateFormatSymbols {
     
     
     public GalicianDateFormatSymbols() {
-        super(new Locale("es","ES"));
+        super(Locales.CASTILIAN);
         this.setMonths(GALICIAN_MONTHS);
         this.setShortMonths(GALICIAN_SHORT_MONTHS);
         this.setShortWeekdays(GALICIAN_SHORT_WEEKDAYS);

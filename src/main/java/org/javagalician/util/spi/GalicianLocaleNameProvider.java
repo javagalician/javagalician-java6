@@ -25,10 +25,9 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.spi.LocaleNameProvider;
 
-public final class GalicianLocaleNameProvider extends LocaleNameProvider {
+import org.javagalician.constants.Locales;
 
-    private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
-    private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
+public final class GalicianLocaleNameProvider extends LocaleNameProvider {
 
     private static final Map<String,String> GALICIAN_DISPLAY_COUNTRIES = createGalicianDisplayCountries();
     private static final Map<String,String> GALICIAN_DISPLAY_LANGUAGES = createGalicianDisplayLanguages();
@@ -44,11 +43,11 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (GALICIAN_LOCALE.equals(locale)){
+        if (Locales.GALICIAN.equals(locale)){
             return GALICIAN_DISPLAY_COUNTRIES.get(countryCode);
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     @Override
@@ -56,11 +55,11 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (GALICIAN_LOCALE.equals(locale)){
+        if (Locales.GALICIAN.equals(locale)){
             return GALICIAN_DISPLAY_LANGUAGES.get(languageCode);
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     @Override
@@ -68,17 +67,17 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (GALICIAN_LOCALE.equals(locale)){
+        if (Locales.GALICIAN.equals(locale)){
             return variant; 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
     
 
     @Override
     public Locale[] getAvailableLocales() {
-        return GALICIAN_LOCALE_ARRAY;
+        return Locales.GALICIAN_ARRAY;
     }
     
 

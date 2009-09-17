@@ -25,14 +25,10 @@ import java.text.spi.NumberFormatProvider;
 import java.util.Arrays;
 import java.util.Locale;
 
+import org.javagalician.constants.Locales;
 import org.javagalician.text.GalicianDecimalFormatSymbols;
 
 public final class GalicianNumberFormatProvider extends NumberFormatProvider {
-
-    private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
-    private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
-
-    private static final Locale CASTILIAN_LOCALE = new Locale("es","ES");
     
     
     public GalicianNumberFormatProvider() {
@@ -45,15 +41,15 @@ public final class GalicianNumberFormatProvider extends NumberFormatProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (GALICIAN_LOCALE.equals(locale)){
-            final NumberFormat format = NumberFormat.getCurrencyInstance(CASTILIAN_LOCALE);
+        if (Locales.GALICIAN.equals(locale)){
+            final NumberFormat format = NumberFormat.getCurrencyInstance(Locales.CASTILIAN);
             if (format instanceof DecimalFormat) {
                 ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
             }
             return format; 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     @Override
@@ -61,15 +57,15 @@ public final class GalicianNumberFormatProvider extends NumberFormatProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (GALICIAN_LOCALE.equals(locale)){
-            final NumberFormat format = NumberFormat.getIntegerInstance(CASTILIAN_LOCALE);
+        if (Locales.GALICIAN.equals(locale)){
+            final NumberFormat format = NumberFormat.getIntegerInstance(Locales.CASTILIAN);
             if (format instanceof DecimalFormat) {
                 ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
             }
             return format; 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     @Override
@@ -77,15 +73,15 @@ public final class GalicianNumberFormatProvider extends NumberFormatProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (GALICIAN_LOCALE.equals(locale)){
-            final NumberFormat format = NumberFormat.getNumberInstance(CASTILIAN_LOCALE);
+        if (Locales.GALICIAN.equals(locale)){
+            final NumberFormat format = NumberFormat.getNumberInstance(Locales.CASTILIAN);
             if (format instanceof DecimalFormat) {
                 ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
             }
             return format; 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     @Override
@@ -93,22 +89,22 @@ public final class GalicianNumberFormatProvider extends NumberFormatProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (GALICIAN_LOCALE.equals(locale)){
-            final NumberFormat format = NumberFormat.getPercentInstance(CASTILIAN_LOCALE);
+        if (Locales.GALICIAN.equals(locale)){
+            final NumberFormat format = NumberFormat.getPercentInstance(Locales.CASTILIAN);
             if (format instanceof DecimalFormat) {
                 ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
             }
             return format; 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     
     
     @Override
     public Locale[] getAvailableLocales() {
-        return GALICIAN_LOCALE_ARRAY;
+        return Locales.GALICIAN_ARRAY;
     }
 
 }

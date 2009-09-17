@@ -25,11 +25,10 @@ import java.text.spi.DateFormatProvider;
 import java.util.Arrays;
 import java.util.Locale;
 
+import org.javagalician.constants.Locales;
+
 
 public final class GalicianDateFormatProvider extends DateFormatProvider {
-
-    private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
-    private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
     
     private static final String PATTERN_DATE_SHORT = "d'/'MM'/'yy";
     private static final String PATTERN_DATE_MEDIUM = "dd'-'MMM'-'yyyy";
@@ -57,7 +56,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
         if (!isStyleValid(style)) {
             throw new IllegalArgumentException("Style \"" + style + "\" is not valid");
         }
-        if (GALICIAN_LOCALE.equals(locale)){
+        if (Locales.GALICIAN.equals(locale)){
             switch (style) {
                 case DateFormat.FULL:
                     return new SimpleDateFormat(PATTERN_DATE_FULL, locale); 
@@ -70,7 +69,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
             }
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
 
@@ -86,7 +85,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
         if (!isStyleValid(timeStyle)) {
             throw new IllegalArgumentException("Style \"" + timeStyle + "\" is not valid");
         }
-        if (GALICIAN_LOCALE.equals(locale)){
+        if (Locales.GALICIAN.equals(locale)){
             
             final StringBuffer pattern = new StringBuffer();
             switch (dateStyle) {
@@ -123,7 +122,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
             
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
 
@@ -136,7 +135,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
         if (!isStyleValid(style)) {
             throw new IllegalArgumentException("Style \"" + style + "\" is not valid");
         }
-        if (GALICIAN_LOCALE.equals(locale)){
+        if (Locales.GALICIAN.equals(locale)){
             switch (style) {
                 case DateFormat.FULL:
                     return new SimpleDateFormat(PATTERN_TIME_FULL, locale); 
@@ -149,7 +148,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
             }
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     
@@ -162,7 +161,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
     
     @Override
     public Locale[] getAvailableLocales() {
-        return GALICIAN_LOCALE_ARRAY;
+        return Locales.GALICIAN_ARRAY;
     }
 
 }

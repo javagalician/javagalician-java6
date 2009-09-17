@@ -20,7 +20,8 @@
 package org.javagalician.text;
 
 import java.text.DecimalFormatSymbols;
-import java.util.Locale;
+
+import org.javagalician.constants.Locales;
 
 public final class GalicianDecimalFormatSymbols extends DecimalFormatSymbols {
 
@@ -28,7 +29,7 @@ public final class GalicianDecimalFormatSymbols extends DecimalFormatSymbols {
 
     
     public GalicianDecimalFormatSymbols() {
-        super(new Locale("es","ES"));
+        super(Locales.CASTILIAN);
     }
     
 

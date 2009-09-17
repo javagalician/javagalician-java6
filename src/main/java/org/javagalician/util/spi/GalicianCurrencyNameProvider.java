@@ -24,12 +24,9 @@ import java.util.Currency;
 import java.util.Locale;
 import java.util.spi.CurrencyNameProvider;
 
+import org.javagalician.constants.Locales;
+
 public final class GalicianCurrencyNameProvider extends CurrencyNameProvider {
-
-    private static final Locale GALICIAN_LOCALE = new Locale("gl","ES");
-    private static final Locale[] GALICIAN_LOCALE_ARRAY = new Locale[] { GALICIAN_LOCALE };
-
-    private static final Locale CASTILIAN_LOCALE = new Locale("es","ES");
 
     
     public GalicianCurrencyNameProvider() {
@@ -41,16 +38,16 @@ public final class GalicianCurrencyNameProvider extends CurrencyNameProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (GALICIAN_LOCALE.equals(locale)){
-            return Currency.getInstance(currencyCode).getSymbol(CASTILIAN_LOCALE); 
+        if (Locales.GALICIAN.equals(locale)){
+            return Currency.getInstance(currencyCode).getSymbol(Locales.CASTILIAN); 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(GALICIAN_LOCALE_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     @Override
     public Locale[] getAvailableLocales() {
-        return GALICIAN_LOCALE_ARRAY;
+        return Locales.GALICIAN_ARRAY;
     }
 
 }
