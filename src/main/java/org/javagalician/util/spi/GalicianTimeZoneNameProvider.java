@@ -19,7 +19,6 @@
  */
 package org.javagalician.util.spi;
 
-import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.util.Arrays;
 import java.util.Locale;
@@ -49,10 +48,18 @@ public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
             throw new IllegalArgumentException("Style \"" + style + "\" is not valid");
         }
         if (GALICIAN_LOCALE.equals(locale)){
+            
             final DateFormatSymbols symbols = DateFormatSymbols.getInstance(GALICIAN_LOCALE);
             final String[][] zoneStrings = symbols.getZoneStrings();
             for (int i = 0; i < zoneStrings.length; i++) {
-                
+                if (ID.equalsIgnoreCase(zoneStrings[i][0])) {
+                    if (style == TimeZone.LONG) {
+                        return (daylight? zoneStrings[i][3] : zoneStrings[i][1]);
+                    }
+                    if (style == TimeZone.SHORT) {
+                        return (daylight? zoneStrings[i][4] : zoneStrings[i][4]);
+                    }
+                }
             }
             
         }
