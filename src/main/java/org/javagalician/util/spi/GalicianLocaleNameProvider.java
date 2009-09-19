@@ -139,7 +139,7 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         displayCountries.put("CX","Isla Christmas");
         displayCountries.put("CY","Chipre");
         displayCountries.put("CZ","Chequia");
-        displayCountries.put("DE","Alemania");
+        displayCountries.put("DE","Alema\u00F1a");
         displayCountries.put("DJ","Yibuti");
         displayCountries.put("DK","Dinamarca");
         displayCountries.put("DM","Dominica");
@@ -375,7 +375,7 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         displayLanguages.put("eo","esperanto");
         displayLanguages.put("es","castel\u00E1n");
         displayLanguages.put("et","estonio");
-        displayLanguages.put("eu","euskera");
+        displayLanguages.put("eu","\u00E9uscaro");
         displayLanguages.put("fa","farsi");
         displayLanguages.put("ff","fulb\u00E9");
         displayLanguages.put("fi","fin\u00E9s");
@@ -449,13 +449,13 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         displayLanguages.put("mt","malt\u00E9s");
         displayLanguages.put("my","birmano");
         displayLanguages.put("na","nauruano");
-        displayLanguages.put("nb","noruego (bokmål)");
+        displayLanguages.put("nb","noruegu\u00E1s (bokmål)");
         displayLanguages.put("nd","ndebele (norte)");
         displayLanguages.put("ne","nepal\u00ED");
         displayLanguages.put("ng","ndonga");
         displayLanguages.put("nl","holand\u00E9s");
-        displayLanguages.put("nn","noruego (nynorsk)");
-        displayLanguages.put("no","noruego");
+        displayLanguages.put("nn","noruegu\u00E1s (nynorsk)");
+        displayLanguages.put("no","noruegu\u00E1s");
         displayLanguages.put("nr","ndebele (sur)");
         displayLanguages.put("nv","navallo");
         displayLanguages.put("ny","nyanja");
