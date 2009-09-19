@@ -6,7 +6,7 @@
   <groupId>org.javagalician</groupId>
   <artifactId>javagalician-java6</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-dev</version>
+  <version>1.0</version>
   <name>javagalician</name>
   <url>http://www.javagalician.org</url>
 
@@ -25,7 +25,7 @@
   
   <scm>
     <url>http://javagalician.svn.sourceforge.net/viewvc/javagalician/</url>
-    <connection>scm:svn:https://javagalician.svn.sourceforge.net/svnroot/javagalician</connection>
+    <connection>scm:svn:http://javagalician.svn.sourceforge.net/svnroot/javagalician</connection>
     <developerConnection>scm:svn:https://javagalician.svn.sourceforge.net/svnroot/javagalician</developerConnection>
   </scm>
   
