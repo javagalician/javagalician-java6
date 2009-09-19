@@ -17,39 +17,38 @@
  * 
  * =============================================================================
  */
-package org.javagalician.text.spi;
+package org.javagalician.java6.text.spi;
 
-import java.text.DateFormatSymbols;
-import java.text.spi.DateFormatSymbolsProvider;
+import java.text.DecimalFormatSymbols;
+import java.text.spi.DecimalFormatSymbolsProvider;
 import java.util.Arrays;
 import java.util.Locale;
 
-import org.javagalician.constants.Locales;
-import org.javagalician.text.GalicianDateFormatSymbols;
+import org.javagalician.java6.constants.Locales;
+import org.javagalician.java6.text.GalicianDecimalFormatSymbols;
 
+public final class GalicianDecimalFormatSymbolsProvider extends DecimalFormatSymbolsProvider {
 
-public final class GalicianDateFormatSymbolsProvider extends DateFormatSymbolsProvider {
     
-    
-    
-    
-    public GalicianDateFormatSymbolsProvider() {
+    public GalicianDecimalFormatSymbolsProvider() {
         super();
     }
     
-    
 
+    
     @Override
-    public DateFormatSymbols getInstance(final Locale locale) {
+    public DecimalFormatSymbols getInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         if (Locales.GALICIAN.equals(locale)){
-            return new GalicianDateFormatSymbols();
+            return new GalicianDecimalFormatSymbols();
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-        		"is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
+                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
+    
+    
 
     @Override
     public Locale[] getAvailableLocales() {

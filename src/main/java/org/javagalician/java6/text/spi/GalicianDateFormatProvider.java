@@ -17,7 +17,7 @@
  * 
  * =============================================================================
  */
-package org.javagalician.text.spi;
+package org.javagalician.java6.text.spi;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -25,7 +25,7 @@ import java.text.spi.DateFormatProvider;
 import java.util.Arrays;
 import java.util.Locale;
 
-import org.javagalician.constants.Locales;
+import org.javagalician.java6.constants.Locales;
 
 
 public final class GalicianDateFormatProvider extends DateFormatProvider {

@@ -17,33 +17,37 @@
  * 
  * =============================================================================
  */
-package org.javagalician.util.spi;
+package org.javagalician.java6.text.spi;
 
+import java.text.Collator;
+import java.text.spi.CollatorProvider;
 import java.util.Arrays;
-import java.util.Currency;
 import java.util.Locale;
-import java.util.spi.CurrencyNameProvider;
 
-import org.javagalician.constants.Locales;
+import org.javagalician.java6.constants.Locales;
 
-public final class GalicianCurrencyNameProvider extends CurrencyNameProvider {
+public final class GalicianCollatorProvider extends CollatorProvider {
 
     
-    public GalicianCurrencyNameProvider() {
+    public GalicianCollatorProvider() {
         super();
     }
     
+    
+    
     @Override
-    public String getSymbol(final String currencyCode, final Locale locale) {
+    public Collator getInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         if (Locales.GALICIAN.equals(locale)){
-            return Currency.getInstance(currencyCode).getSymbol(Locales.CASTILIAN); 
+            return Collator.getInstance(Locales.CASTILIAN); 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
                 "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
+    
+    
 
     @Override
     public Locale[] getAvailableLocales() {

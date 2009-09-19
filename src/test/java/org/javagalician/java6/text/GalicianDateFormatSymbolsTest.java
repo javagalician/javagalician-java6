@@ -1,6 +1,8 @@
-package org.javagalician.text;
+package org.javagalician.java6.text;
 
 import java.util.Calendar;
+
+import org.javagalician.java6.text.GalicianDateFormatSymbols;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;

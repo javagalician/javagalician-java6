@@ -17,7 +17,7 @@
  * 
  * =============================================================================
  */
-package org.javagalician.util.spi;
+package org.javagalician.java6.util.spi;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -25,7 +25,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.spi.LocaleNameProvider;
 
-import org.javagalician.constants.Locales;
+import org.javagalician.java6.constants.Locales;
 
 public final class GalicianLocaleNameProvider extends LocaleNameProvider {
 

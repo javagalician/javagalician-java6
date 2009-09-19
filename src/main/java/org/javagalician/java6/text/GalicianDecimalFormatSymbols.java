@@ -17,11 +17,11 @@
  * 
  * =============================================================================
  */
-package org.javagalician.text;
+package org.javagalician.java6.text;
 
 import java.text.DecimalFormatSymbols;
 
-import org.javagalician.constants.Locales;
+import org.javagalician.java6.constants.Locales;
 
 public final class GalicianDecimalFormatSymbols extends DecimalFormatSymbols {
 

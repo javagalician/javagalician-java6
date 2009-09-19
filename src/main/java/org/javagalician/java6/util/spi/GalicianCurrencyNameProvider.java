@@ -17,38 +17,33 @@
  * 
  * =============================================================================
  */
-package org.javagalician.text.spi;
+package org.javagalician.java6.util.spi;
 
-import java.text.DecimalFormatSymbols;
-import java.text.spi.DecimalFormatSymbolsProvider;
 import java.util.Arrays;
+import java.util.Currency;
 import java.util.Locale;
+import java.util.spi.CurrencyNameProvider;
 
-import org.javagalician.constants.Locales;
-import org.javagalician.text.GalicianDecimalFormatSymbols;
+import org.javagalician.java6.constants.Locales;
 
-public final class GalicianDecimalFormatSymbolsProvider extends DecimalFormatSymbolsProvider {
+public final class GalicianCurrencyNameProvider extends CurrencyNameProvider {
 
     
-    public GalicianDecimalFormatSymbolsProvider() {
+    public GalicianCurrencyNameProvider() {
         super();
     }
     
-
-    
     @Override
-    public DecimalFormatSymbols getInstance(final Locale locale) {
+    public String getSymbol(final String currencyCode, final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         if (Locales.GALICIAN.equals(locale)){
-            return new GalicianDecimalFormatSymbols();
+            return Currency.getInstance(currencyCode).getSymbol(Locales.CASTILIAN); 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
                 "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
-    
-    
 
     @Override
     public Locale[] getAvailableLocales() {

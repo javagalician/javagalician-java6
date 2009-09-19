@@ -1,4 +1,4 @@
-package org.javagalician.constants;
+package org.javagalician.java6.constants;
 
 import java.util.Locale;
 

@@ -17,37 +17,39 @@
  * 
  * =============================================================================
  */
-package org.javagalician.text.spi;
+package org.javagalician.java6.text.spi;
 
-import java.text.Collator;
-import java.text.spi.CollatorProvider;
+import java.text.DateFormatSymbols;
+import java.text.spi.DateFormatSymbolsProvider;
 import java.util.Arrays;
 import java.util.Locale;
 
-import org.javagalician.constants.Locales;
+import org.javagalician.java6.constants.Locales;
+import org.javagalician.java6.text.GalicianDateFormatSymbols;
 
-public final class GalicianCollatorProvider extends CollatorProvider {
 
+public final class GalicianDateFormatSymbolsProvider extends DateFormatSymbolsProvider {
     
-    public GalicianCollatorProvider() {
+    
+    
+    
+    public GalicianDateFormatSymbolsProvider() {
         super();
     }
     
     
-    
+
     @Override
-    public Collator getInstance(final Locale locale) {
+    public DateFormatSymbols getInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         if (Locales.GALICIAN.equals(locale)){
-            return Collator.getInstance(Locales.CASTILIAN); 
+            return new GalicianDateFormatSymbols();
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
-                "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
+        		"is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
-    
-    
 
     @Override
     public Locale[] getAvailableLocales() {

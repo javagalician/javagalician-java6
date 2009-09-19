@@ -17,7 +17,7 @@
  * 
  * =============================================================================
  */
-package org.javagalician.util.spi;
+package org.javagalician.java6.util.spi;
 
 import java.text.DateFormatSymbols;
 import java.util.Arrays;
@@ -25,7 +25,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.spi.TimeZoneNameProvider;
 
-import org.javagalician.constants.Locales;
+import org.javagalician.java6.constants.Locales;
 
 public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
 

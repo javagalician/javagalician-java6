@@ -17,73 +17,91 @@
  * 
  * =============================================================================
  */
-package org.javagalician.text.spi;
+package org.javagalician.java6.text.spi;
 
-import java.text.BreakIterator;
-import java.text.spi.BreakIteratorProvider;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.spi.NumberFormatProvider;
 import java.util.Arrays;
 import java.util.Locale;
 
-import org.javagalician.constants.Locales;
+import org.javagalician.java6.constants.Locales;
+import org.javagalician.java6.text.GalicianDecimalFormatSymbols;
 
-public final class GalicianBreakIteratorProvider extends BreakIteratorProvider {
-
+public final class GalicianNumberFormatProvider extends NumberFormatProvider {
     
     
-    public GalicianBreakIteratorProvider() {
+    public GalicianNumberFormatProvider() {
         super();
     }
-
     
     
     @Override
-    public BreakIterator getCharacterInstance(final Locale locale) {
+    public NumberFormat getCurrencyInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         if (Locales.GALICIAN.equals(locale)){
-            return BreakIterator.getCharacterInstance(Locales.CASTILIAN); 
+            final NumberFormat format = NumberFormat.getCurrencyInstance(Locales.CASTILIAN);
+            if (format instanceof DecimalFormat) {
+                ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
+            }
+            return format; 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
                 "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     @Override
-    public BreakIterator getLineInstance(final Locale locale) {
+    public NumberFormat getIntegerInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         if (Locales.GALICIAN.equals(locale)){
-            return BreakIterator.getLineInstance(Locales.CASTILIAN); 
+            final NumberFormat format = NumberFormat.getIntegerInstance(Locales.CASTILIAN);
+            if (format instanceof DecimalFormat) {
+                ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
+            }
+            return format; 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
                 "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     @Override
-    public BreakIterator getSentenceInstance(final Locale locale) {
+    public NumberFormat getNumberInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         if (Locales.GALICIAN.equals(locale)){
-            return BreakIterator.getSentenceInstance(Locales.CASTILIAN); 
+            final NumberFormat format = NumberFormat.getNumberInstance(Locales.CASTILIAN);
+            if (format instanceof DecimalFormat) {
+                ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
+            }
+            return format; 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
                 "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
     @Override
-    public BreakIterator getWordInstance(final Locale locale) {
+    public NumberFormat getPercentInstance(final Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         if (Locales.GALICIAN.equals(locale)){
-            return BreakIterator.getWordInstance(Locales.CASTILIAN); 
+            final NumberFormat format = NumberFormat.getPercentInstance(Locales.CASTILIAN);
+            if (format instanceof DecimalFormat) {
+                ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
+            }
+            return format; 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
                 "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
     }
 
+    
+    
     @Override
     public Locale[] getAvailableLocales() {
         return Locales.GALICIAN_ARRAY;
