@@ -1,0 +1,33 @@
+
+=========================
+JAVAGALICIAN INSTALLATION
+=========================
+
+REQUIREMENTS: Java SE 6 or higher.
+
+--------------------------------------------------------------
+Checking the status of your current VM's Galician localization
+--------------------------------------------------------------
+
+Once you have downloaded the JAVAGALICIAN distribution zip file and
+uncompressed it, cd into the distribution directory where the two
+jar files (javagalician and javagalician-check) are and execute the
+check:
+
+$ java -jar javagalician-java6-check-{version}.jar
+
+This will tell you the current status of your VM regarding
+Galician localization.
+
+------------
+Installation
+------------
+
+For installing JAVAGALICIAN, just copy the javagalician-java6-{version}.jar 
+file into your Java virtual machine's extension folder:
+
+  * For a Java JDK: $JAVA_HOME/jre/lib/ext
+  * For a Java JRE: $JAVA_HOME/lib/ext
+  
+Then execute the test again, as explained above. Everything should be OK.
+
