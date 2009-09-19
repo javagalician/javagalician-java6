@@ -196,7 +196,7 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         displayCountries.put("JP","Xap\u00F3n");
         displayCountries.put("KE","Kenia");
         displayCountries.put("KG","Kirguizist\u00E1n");
-        displayCountries.put("KH","Camboia");
+        displayCountries.put("KH","Camboxa");
         displayCountries.put("KI","Kiribati");
         displayCountries.put("KM","Comores");
         displayCountries.put("KN","San Crist\u00F3bal e Nieves");
