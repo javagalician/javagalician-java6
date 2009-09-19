@@ -449,13 +449,13 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         displayLanguages.put("mt","malt\u00E9s");
         displayLanguages.put("my","birmano");
         displayLanguages.put("na","nauruano");
-        displayLanguages.put("nb","noruegu\u00E1s (bokmål)");
+        displayLanguages.put("nb","noruegu\u00E9s (bokm\u00E5l)");
         displayLanguages.put("nd","ndebele (norte)");
         displayLanguages.put("ne","nepal\u00ED");
         displayLanguages.put("ng","ndonga");
         displayLanguages.put("nl","holand\u00E9s");
-        displayLanguages.put("nn","noruegu\u00E1s (nynorsk)");
-        displayLanguages.put("no","noruegu\u00E1s");
+        displayLanguages.put("nn","noruegu\u00E9s (nynorsk)");
+        displayLanguages.put("no","noruegu\u00E9s");
         displayLanguages.put("nr","ndebele (sur)");
         displayLanguages.put("nv","navallo");
         displayLanguages.put("ny","nyanja");
