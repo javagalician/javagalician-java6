@@ -1,7 +1,7 @@
 /*
  * =============================================================================
  * 
- *   Copyright (c) 2008, The JAVAGALICIAN team (http://www.javagalician.org)
+ *   Copyright (c) 2009, The JAVAGALICIAN team (http://www.javagalician.org)
  * 
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
