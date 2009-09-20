@@ -40,7 +40,7 @@ public final class GalicianCollatorProvider extends CollatorProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             return Collator.getInstance(Locales.CASTILIAN); 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +

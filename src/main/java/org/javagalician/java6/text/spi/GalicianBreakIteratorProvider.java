@@ -41,7 +41,7 @@ public final class GalicianBreakIteratorProvider extends BreakIteratorProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             return BreakIterator.getCharacterInstance(Locales.CASTILIAN); 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
@@ -53,7 +53,7 @@ public final class GalicianBreakIteratorProvider extends BreakIteratorProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             return BreakIterator.getLineInstance(Locales.CASTILIAN); 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
@@ -65,7 +65,7 @@ public final class GalicianBreakIteratorProvider extends BreakIteratorProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             return BreakIterator.getSentenceInstance(Locales.CASTILIAN); 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
@@ -77,7 +77,7 @@ public final class GalicianBreakIteratorProvider extends BreakIteratorProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             return BreakIterator.getWordInstance(Locales.CASTILIAN); 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +

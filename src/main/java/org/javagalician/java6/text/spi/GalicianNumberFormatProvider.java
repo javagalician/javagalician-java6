@@ -41,7 +41,7 @@ public final class GalicianNumberFormatProvider extends NumberFormatProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             final NumberFormat format = NumberFormat.getCurrencyInstance(Locales.CASTILIAN);
             if (format instanceof DecimalFormat) {
                 ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
@@ -57,7 +57,7 @@ public final class GalicianNumberFormatProvider extends NumberFormatProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             final NumberFormat format = NumberFormat.getIntegerInstance(Locales.CASTILIAN);
             if (format instanceof DecimalFormat) {
                 ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
@@ -73,7 +73,7 @@ public final class GalicianNumberFormatProvider extends NumberFormatProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             final NumberFormat format = NumberFormat.getNumberInstance(Locales.CASTILIAN);
             if (format instanceof DecimalFormat) {
                 ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());
@@ -89,7 +89,7 @@ public final class GalicianNumberFormatProvider extends NumberFormatProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             final NumberFormat format = NumberFormat.getPercentInstance(Locales.CASTILIAN);
             if (format instanceof DecimalFormat) {
                 ((DecimalFormat)format).setDecimalFormatSymbols(new GalicianDecimalFormatSymbols());

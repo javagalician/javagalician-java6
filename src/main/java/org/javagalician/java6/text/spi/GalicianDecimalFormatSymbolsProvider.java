@@ -41,7 +41,7 @@ public final class GalicianDecimalFormatSymbolsProvider extends DecimalFormatSym
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             return new GalicianDecimalFormatSymbols();
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +

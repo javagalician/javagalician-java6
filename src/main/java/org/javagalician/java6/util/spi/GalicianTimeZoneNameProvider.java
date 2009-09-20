@@ -46,9 +46,9 @@ public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
         if (!isStyleValid(style)) {
             throw new IllegalArgumentException("Style \"" + style + "\" is not valid");
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             
-            final DateFormatSymbols symbols = DateFormatSymbols.getInstance(Locales.GALICIAN);
+            final DateFormatSymbols symbols = DateFormatSymbols.getInstance(Locales.GALICIAN_ES);
             final String[][] zoneStrings = symbols.getZoneStrings();
             for (int i = 0; i < zoneStrings.length; i++) {
                 if (ID.equalsIgnoreCase(zoneStrings[i][0])) {

@@ -56,7 +56,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
         if (!isStyleValid(style)) {
             throw new IllegalArgumentException("Style \"" + style + "\" is not valid");
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             switch (style) {
                 case DateFormat.FULL:
                     return new SimpleDateFormat(PATTERN_DATE_FULL, locale); 
@@ -85,7 +85,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
         if (!isStyleValid(timeStyle)) {
             throw new IllegalArgumentException("Style \"" + timeStyle + "\" is not valid");
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             
             final StringBuffer pattern = new StringBuffer();
             switch (dateStyle) {
@@ -135,7 +135,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
         if (!isStyleValid(style)) {
             throw new IllegalArgumentException("Style \"" + style + "\" is not valid");
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_ES.equals(locale)){
             switch (style) {
                 case DateFormat.FULL:
                     return new SimpleDateFormat(PATTERN_TIME_FULL, locale); 

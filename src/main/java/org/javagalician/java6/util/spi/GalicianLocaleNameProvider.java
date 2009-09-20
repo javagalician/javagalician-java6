@@ -43,7 +43,7 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             return GALICIAN_DISPLAY_COUNTRIES.get(countryCode);
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
@@ -55,7 +55,7 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             return GALICIAN_DISPLAY_LANGUAGES.get(languageCode);
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
@@ -67,7 +67,7 @@ public final class GalicianLocaleNameProvider extends LocaleNameProvider {
         if (locale == null) {
             throw new NullPointerException();
         }
-        if (Locales.GALICIAN.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             return variant; 
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
