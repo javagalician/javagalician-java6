@@ -17,7 +17,9 @@ checks:
 $ java -jar javagalician-java6-check-{version}.jar
 
 This will tell you the current status of your VM regarding
-Galician localization.
+Galician localization.Normally, it will tell you that neither the
+'gl' nor the 'gl_ES' locales are available.
+  
 
 -------------
 2. Installing
@@ -31,6 +33,7 @@ file into your Java virtual machine's extension folder:
 
   * For a Java JDK: $JAVA_HOME/jre/lib/ext
   * For a Java JRE: $JAVA_HOME/lib/ext
+  * For an Apple Java JDK/JRE in Mac OS X: /Library/Java/Extensions
 
 
 > 2. Specifying as parameter on VM start
