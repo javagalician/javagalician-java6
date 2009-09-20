@@ -27,7 +27,7 @@ public final class Locales {
 
     public static final Locale GALICIAN = new Locale("gl");
     public static final Locale GALICIAN_ES = new Locale("gl","ES");
-    public static final Locale[] GALICIAN_ARRAY = new Locale[] { GALICIAN_ES };
+    public static final Locale[] GALICIAN_ARRAY = new Locale[] { GALICIAN, GALICIAN_ES };
     public static final List<Locale> GALICIAN_LIST = Arrays.asList(GALICIAN_ARRAY);
 
     public static final Locale CASTILIAN = new Locale("es","ES");
