@@ -135,7 +135,7 @@ public final class GalicianDateFormatProvider extends DateFormatProvider {
         if (!isStyleValid(style)) {
             throw new IllegalArgumentException("Style \"" + style + "\" is not valid");
         }
-        if (Locales.GALICIAN_ES.equals(locale)){
+        if (Locales.GALICIAN_LIST.contains(locale)){
             switch (style) {
                 case DateFormat.FULL:
                     return new SimpleDateFormat(PATTERN_TIME_FULL, locale); 
