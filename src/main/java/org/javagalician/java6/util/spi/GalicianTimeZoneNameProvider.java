@@ -50,6 +50,9 @@ public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
             
             final DateFormatSymbols symbols = DateFormatSymbols.getInstance(Locales.GALICIAN_ES);
             final String[][] zoneStrings = symbols.getZoneStrings();
+            /*
+             * First, try to retrieve a name using the specified ID as the main timezone ID
+             */
             for (int i = 0; i < zoneStrings.length; i++) {
                 if (ID.equalsIgnoreCase(zoneStrings[i][0])) {
                     switch (style) {
@@ -60,7 +63,39 @@ public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
                     }
                 }
             }
+            /*
+             * Then try to retrieve a name using the specified ID as a short name 
+             * (first, non-daylight saving - then, daylight-saving).
+             */
+            if (!daylight) {
+                for (int i = 0; i < zoneStrings.length; i++) {
+                    if (ID.equalsIgnoreCase(zoneStrings[i][2])) {
+                        switch (style) {
+                            case TimeZone.LONG :
+                                return (daylight? zoneStrings[i][3] : zoneStrings[i][1]);
+                            case TimeZone.SHORT :
+                                return (daylight? zoneStrings[i][4] : zoneStrings[i][2]);
+                        }
+                    }
+                }
+            } else {
+                for (int i = 0; i < zoneStrings.length; i++) {
+                    if (ID.equalsIgnoreCase(zoneStrings[i][4])) {
+                        switch (style) {
+                            case TimeZone.LONG :
+                                return (daylight? zoneStrings[i][3] : zoneStrings[i][1]);
+                            case TimeZone.SHORT :
+                                return (daylight? zoneStrings[i][4] : zoneStrings[i][2]);
+                        }
+                    }
+                }
+            }
             
+            /*
+             * If we don't have a name yet, default to en_US
+             */
+            final TimeZone timeZone = TimeZone.getTimeZone(ID);
+            return timeZone.getDisplayName(new Locale("en","US"));
         }
         throw new IllegalArgumentException("Locale \"" + locale + "\" " +
                 "is not one of the supported locales (" +  Arrays.asList(Locales.GALICIAN_ARRAY) + ")");
@@ -78,4 +113,5 @@ public final class GalicianTimeZoneNameProvider extends TimeZoneNameProvider {
         return Locales.GALICIAN_ARRAY;
     }
 
+    
 }
