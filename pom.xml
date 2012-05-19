@@ -6,7 +6,7 @@
   <groupId>org.javagalician</groupId>
   <artifactId>javagalician-java6</artifactId>
   <packaging>jar</packaging>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
   <name>javagalician</name>
   <url>http://www.javagalician.org</url>
 
